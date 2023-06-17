@@ -60,9 +60,6 @@ button:hover {
 
 }
 
-.hide {
-  scale: 0%
-}
 
 .book {
   position: absolute;
@@ -110,12 +107,12 @@ button:hover {
   width: auto;
 }
 
+.locked {
+  filter: brightness(0);
+}
 
-.left-over-card:hover+.hide {
-  position: relative;
-  scale: 100%;
-  top: -500%;
-  display: inline-flex;
+.unlocked {
+  filter: brightness(1);
 }
 
 .tray {

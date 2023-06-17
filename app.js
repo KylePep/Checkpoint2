@@ -25,7 +25,8 @@ let upgrades = [
     value: 0,
     mulitplier: 1,
     quantity: 0,
-    type: 'click'
+    type: 'click',
+    unlocked: true
   }, {
     name: 'upgrade2',
     cost: 300,
@@ -33,7 +34,8 @@ let upgrades = [
     value: 0,
     mulitplier: 5,
     quantity: 0,
-    type: 'click'
+    type: 'click',
+    unlocked: false
   }, {
     name: 'upgrade3',
     cost: 250,
@@ -41,15 +43,17 @@ let upgrades = [
     value: 0,
     quantity: 0,
     mulitplier: 1,
-    type: 'interval'
+    type: 'interval',
+    unlocked: false
   }, {
     name: 'upgrade4',
     cost: 1000,
     costMuliplier: 1.25,
     value: 0,
     quantity: 0,
-    mulitplier: 5,
-    type: 'interval'
+    mulitplier: 10,
+    type: 'interval',
+    unlocked: false
   }
 ]
 
@@ -57,6 +61,7 @@ function resoureClick() {
   resource += resourcePerClick
   resourceCareer += resourcePerClick
   console.log(resource)
+  checkUnlock()
   drawresource()
 }
 
@@ -130,8 +135,24 @@ function intervalUpgrade() {
       resourceCareer += upgrade.value
       drawresource()
     }
-
   })
+}
+
+function checkUnlock() {
+  upgrades.forEach(upgrade => {
+    if (resource >= upgrade.cost) {
+      upgrade.unlocked = true;
+    }
+  })
+  if (upgrades[1].unlocked == true) {
+    up2.querySelector('img').classList.replace('locked', 'unlocked')
+  }
+  if (upgrades[2].unlocked == true) {
+    up3.querySelector('img').classList.replace('locked', 'unlocked')
+  }
+  if (upgrades[3].unlocked == true) {
+    up4.querySelector('img').classList.replace('locked', 'unlocked')
+  }
 }
 
 drawUpgrade()
