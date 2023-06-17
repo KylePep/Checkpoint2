@@ -2,6 +2,8 @@ let resource = 0;
 let resourcePerClick = 1;
 let resourcePerInterval = 0;
 let resourceCareer = 0;
+let musicUnlock = false;
+let lights = false;
 
 const up1 = document.getElementById('upgrade1')
 const up11 = document.getElementById('upgrade11')
@@ -29,7 +31,7 @@ let upgrades = [
     unlocked: true
   }, {
     name: 'upgrade2',
-    cost: 300,
+    cost: 600,
     costMuliplier: 1.25,
     value: 0,
     mulitplier: 5,
@@ -139,6 +141,16 @@ function intervalUpgrade() {
 }
 
 function checkUnlock() {
+  if (resource >= 500 && musicUnlock == false) {
+    window.alert("You found your headphones plug in and listen?")
+    document.getElementById('music').querySelector('audio').classList.remove('hidden')
+    musicUnlock = true;
+  }
+  if (resource >= 10 && lights == false) {
+    window.alert("Eveyones asleep, Maybe we should play?")
+    document.getElementById('body').classList.replace('bg-hidden', 'bg')
+    lights = true;
+  }
   upgrades.forEach(upgrade => {
     if (resource >= upgrade.cost) {
       upgrade.unlocked = true;

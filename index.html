@@ -14,7 +14,7 @@
   <title>Document</title>
 </head>
 
-<body>
+<body id="body" class="bg-hidden">
   <!-- SECTION HEADER -->
   <header class="container-fluid">
     <section class="row d-flex flex-row justify-content-between bg-dark bg-gradient">
@@ -50,7 +50,7 @@
                 <p>Cost:x1</p>
                 <img src="Assets\books.png" class="clickable item " onclick="buyUpgrade('upgrade1')">
                 </img>
-                <h6 class="pt-2">What Homework?</h6>
+                <h6 class="pt-0">What Homework?</h6>
               </div>
               <div id="upgrade2" class=" d-flex flex-column desk-font game">
                 <p>Cost:x2</p>
@@ -58,17 +58,17 @@
                 <h6 class="pt-2">New Release</h6>
               </div>
             </div>
-            <div class="col-3 fs-6 d-flex flex-row justify-content-center desk-font text-center py-5">
+            <div class="col-3 fs-6 d-flex flex-row justify-content-center desk-font text-center pt-3 pb-5">
               <div>
                 <p id="upgrade11" class="mdi mdi-book px-4"><span>:y1 </span></p>
-                <p id="upgrade22" class="mdi mdi-cassette px-4"><span>:y2 </span></p>
+                <p id="upgrade22" class="mdi mdi-cassette px-4 pb-2"><span>:y2 </span></p>
               </div>
               <div>
                 <p id="upgrade33" class="mdi mdi-food px-4"><span>:y3 </span></p>
-                <p id="upgrade44" class="mdi mdi-food-turkey px-4"><span>:y4 </span></p>
+                <p id="upgrade44" class="mdi mdi-food-turkey px-4 pb-2"><span>:y4 </span></p>
               </div>
             </div>
-            <div class="col-3 d-flex flex-column text-center desk-font">
+            <div class=" col-3 d-flex flex-column text-center desk-font">
               <div id="upgrade3" class="d-flex flex-column snack">
                 <p>Cost:x3</p>
                 <img src=" Assets\snack.png" class="clickable item locked" onclick="buyUpgrade('upgrade3')"> </img>
@@ -89,8 +89,9 @@
 
   <!-- SECTION FOOTER -->
   <footer class="container-fluid">
-    <section class="row">
-      <div class="col-12 bg-dark bg-gradient "><i class="mdi mdi-controller"></i></div>
+    <section id="music" class="row bg-dark bg-gradient">
+      <div class="col-11"><i class="mdi mdi-controller"></i></div>
+      <audio controls loop class="col-1 hidden  music" src="Assets\BG-music.mp3"></audio>
     </section>
   </footer>
 

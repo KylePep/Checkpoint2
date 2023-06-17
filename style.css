@@ -2,14 +2,22 @@ body {
   font-family: 'Press Start 2P', sans-serif;
   color: lime;
   text-shadow: 2px 2px #237020;
-  background-image: url(Assets/image_processing20210522-29652-dst5w5.gif);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: bottom;
+
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.bg-hidden {
+  background-color: black;
+}
+
+.bg {
+  background-image: url(Assets/image_processing20210522-29652-dst5w5.gif);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
 }
 
 main {
@@ -48,14 +56,14 @@ button:hover {
 
 .stats-click {
   position: absolute;
-  top: -150%;
+  top: -170%;
   right: 77%;
 
 }
 
 .stats-interval {
   position: absolute;
-  top: -150%;
+  top: -170%;
   right: 14%;
 
 }
@@ -64,11 +72,11 @@ button:hover {
 .book {
   position: absolute;
   top: -65%;
-  right: 73%;
+  right: 75%;
 }
 
 .book>img {
-  height: 204px;
+  height: 195px;
   width: auto;
 }
 
@@ -105,6 +113,14 @@ button:hover {
   height: 134px;
   transform: scaleX(-1);
   width: auto;
+}
+
+.music {
+  height: 10px;
+}
+
+.hidden {
+  display: none;
 }
 
 .locked {
