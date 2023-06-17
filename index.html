@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.2.96/css/materialdesignicons.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- SECTION HEADER -->
+  <header class="container-fluid">
+    <section class="row d-flex flex-row justify-content-between bg-dark bg-gradient">
+      <div class="col-8  pb-4">IT'S ANOTHER ALL NIGHTER, AVOID RESPONSIBILITIES!</div>
+      <p id="resourceCareer" class="col-4 text-center">Career total:</p>
+    </section>
+  </header>
+
+  <!-- SECTION MAIN -->
+  <main class="container-fluid">
+    <section class="row d-flex flex-column">
+      <div class="d-flex flex-row align-items-center">
+        <div class="col-4"></div>
+        <div id="resourceQty" class="counter col-4 text-center fs-4">Responsibilities avoided: 0
+        </div>
+      </div>
+      <div class="col-12 d-flex flex-row justify-content-center">
+        <img src="Assets\13.gif" class="miner clickable" onclick="resoureClick()"></img>
+      </div>
+      <div class="col-12 tray fs-6">
+        <section class="row position-relative ">
+          <div class="col-12 d-flex justify-content-around ">
+            <i class="mdi mdi-cursor-pointer stats-click fs-3 counter">:
+              <span id="resourceClick" class="fs-3"> rescources per click: 1</span>
+            </i>
+            <i class=" mdi mdi-progress-clock stats-interval fs-3 counter">:
+              <span id="resourceInterval" class="fs-3">Resources per interval: 0 </span>
+            </i>
+          </div>
+          <div class="d-flex flex-row justify-content-around position-relative">
+            <div class="col-3 d-flex flex-column text-center">
+              <div id="upgrade1" class="d-flex flex-column desk-font book">
+                <p>Cost:x1</p>
+                <img src="Assets\books.png" class="clickable item" onclick="buyUpgrade('upgrade1')">
+                </img>
+                <h6>What Homework?</h6>
+              </div>
+              <div id="upgrade2" class=" d-flex flex-column desk-font game">
+                <p>Cost:x2</p>
+                <img src="Assets\game.png" class="clickable item " onclick="buyUpgrade('upgrade2')"> </img>
+                <h6>New Release</h6>
+              </div>
+            </div>
+            <div class="col-3 fs-6 d-flex flex-row justify-content-center desk-font text-center py-5">
+              <div>
+                <p id="upgrade11" class="mdi mdi-book px-4"><span>:y1 </span></p>
+                <p id="upgrade22" class="mdi mdi-cassette px-4"><span>:y2 </span></p>
+              </div>
+              <div>
+                <p id="upgrade33" class="mdi mdi-food px-4"><span>:y3 </span></p>
+                <p id="upgrade44" class="mdi mdi-food-turkey px-4"><span>:y4 </span></p>
+              </div>
+            </div>
+            <div class="col-3 d-flex flex-column text-center">
+              <div id="upgrade3" class="d-flex flex-column snack">
+                <p>Cost:x3</p>
+                <img src=" Assets\snack.png" class="clickable item " onclick="buyUpgrade('upgrade3')"> </img>
+                <h6>Snacks</h6>
+              </div>
+              <div id=" upgrade4" class="d-flex flex-column left-over">
+                <p class=" hide">Cost:x4</p>
+                <img src="Assets\Hamburger_Stewed_in_Tomato_Sause.webp" class="clickable item  left-over-card"
+                  onclick="buyUpgrade('upgrade4')"> </img>
+                <h6 class="hide">Left Overs</h6>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <!-- SECTION FOOTER -->
+  <footer class="container-fluid">
+    <section class="row">
+      <div class="col-12 bg-dark bg-gradient "><i class="mdi mdi-controller"></i></div>
+    </section>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+
+</html>

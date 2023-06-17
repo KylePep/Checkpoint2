@@ -1,0 +1,113 @@
+body {
+  font-family: 'Press Start 2P', sans-serif;
+  color: lime;
+  background-image: url(Assets/image_processing20210522-29652-dst5w5.gif);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.desk-font {
+  color: rgb(210, 230, 216)
+}
+
+.counter {
+  border: 4mm ridge rgb(81, 255, 0, .5);
+  padding: 10px;
+  background-color: rgba(34, 34, 34, 0.8);
+}
+
+button:hover {
+  scale: 102%
+}
+
+.miner {
+  max-height: 338px
+}
+
+.clickable:hover {
+  scale: 110%;
+  cursor: pointer;
+}
+
+.item {}
+
+.stats-click {
+  position: absolute;
+  top: -150%;
+  right: 77%;
+
+}
+
+.stats-interval {
+  position: absolute;
+  top: -150%;
+  right: 14%;
+
+}
+
+
+.left-over {
+  height: 134px;
+  width: auto;
+  position: absolute;
+  top: -25%;
+  right: 20%;
+}
+
+.hide {
+  scale: 0%
+}
+
+.left-over-card:hover+.hide {
+  position: relative;
+  scale: 100%;
+  top: -500%;
+  display: inline-flex;
+}
+
+.game {
+  height: 144px;
+  width: auto;
+  position: absolute;
+  top: -15%;
+  right: 65%;
+}
+
+.snack {
+  height: 222px;
+  width: auto;
+  position: absolute;
+  top: -85%;
+  right: 0%;
+}
+
+.book {
+  height: 204px;
+  width: auto;
+  position: absolute;
+  top: -45%;
+  right: 73%;
+}
+
+.tray {
+  box-sizing: border-box;
+  width: 98%;
+  height: max-content;
+  padding: 0px;
+  background-image: url(Assets/Desk.png);
+  border: 0px solid black;
+  background-size: 100% 100%;
+
+}
