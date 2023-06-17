@@ -1,6 +1,7 @@
 body {
   font-family: 'Press Start 2P', sans-serif;
   color: lime;
+  text-shadow: 2px 2px #237020;
   background-image: url(Assets/image_processing20210522-29652-dst5w5.gif);
   background-repeat: no-repeat;
   background-size: cover;
@@ -19,8 +20,10 @@ main {
 }
 
 .desk-font {
-  color: rgb(210, 230, 216)
+  color: rgb(210, 230, 216);
+  text-shadow: 2px 2px #169c07;
 }
+
 
 .counter {
   border: 4mm ridge rgb(81, 255, 0, .5);
@@ -57,48 +60,62 @@ button:hover {
 
 }
 
-
-.left-over {
-  height: 134px;
-  width: auto;
-  position: absolute;
-  top: -25%;
-  right: 20%;
-}
-
 .hide {
   scale: 0%
 }
+
+.book {
+  position: absolute;
+  top: -65%;
+  right: 73%;
+}
+
+.book>img {
+  height: 204px;
+  width: auto;
+}
+
+.game {
+  position: absolute;
+  top: -35%;
+  right: 65%;
+}
+
+.game>img {
+  height: 144px;
+  width: auto;
+}
+
+.snack {
+  position: absolute;
+  top: -95%;
+  right: 0%;
+}
+
+.snack>img {
+  height: 222px;
+  transform: scaleX(-1);
+  width: auto;
+}
+
+.left-over {
+  position: absolute;
+  top: -35%;
+  right: 20%;
+}
+
+.left-over>img {
+  height: 134px;
+  transform: scaleX(-1);
+  width: auto;
+}
+
 
 .left-over-card:hover+.hide {
   position: relative;
   scale: 100%;
   top: -500%;
   display: inline-flex;
-}
-
-.game {
-  height: 144px;
-  width: auto;
-  position: absolute;
-  top: -15%;
-  right: 65%;
-}
-
-.snack {
-  height: 222px;
-  width: auto;
-  position: absolute;
-  top: -85%;
-  right: 0%;
-}
-
-.book {
-  height: 204px;
-  width: auto;
-  position: absolute;
-  top: -45%;
-  right: 73%;
 }
 
 .tray {
@@ -109,5 +126,4 @@ button:hover {
   background-image: url(Assets/Desk.png);
   border: 0px solid black;
   background-size: 100% 100%;
-
 }
