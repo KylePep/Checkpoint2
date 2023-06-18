@@ -259,7 +259,7 @@ function intervalUpgrade() {
     let barPercent = (highScoreBonus.bonusRounds / highScoreBonus.bonusRoundsMax) * 100
 
     document.getElementById('progressBar').innerHTML = `
-      <div id="highScoreBar" class="progress" role="progressbar">
+      <div id="highScoreBar" class="progress bg-dark bg-gradient" role="progressbar">
       <div class="progress-bar scoreBar" style="width: ${barPercent}%"></div>
     </div>
       `
