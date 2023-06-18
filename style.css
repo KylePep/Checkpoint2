@@ -73,8 +73,6 @@ button:hover {
   cursor: pointer;
 }
 
-.item {}
-
 .stats-click {
   position: absolute;
   top: -170%;
