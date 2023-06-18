@@ -9,6 +9,27 @@ body {
   justify-content: space-between;
 }
 
+::selection {
+  color: none;
+  background: none;
+}
+
+.highscore {
+  position: absolute;
+  height: 90%;
+  width: 90%;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.scoreBar {
+  background-color: lime;
+}
+
+.stop-click {
+  pointer-events: none;
+}
+
 .bg-hidden {
   background-color: black;
 }

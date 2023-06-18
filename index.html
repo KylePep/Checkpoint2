@@ -14,13 +14,23 @@
   <title>Document</title>
 </head>
 
-<body id="body" class="bg-hidden">
+<body id="body" class="bg-hidden position-relative">
+  <!-- <marquee id="highscore" class="highscore" direction="down" behavior="alternate" Scrollamount=12 style="border:empty">
+    <marquee behavior="alternate" Scrollamount=12>
+      <Div class="fs-1" onclick="clickHighScore()">!HIGHSCORE!</Div>
+    </marquee>
+  </marquee> -->
   <!-- SECTION HEADER -->
-  <header class="container-fluid">
+  <header id="header" class="container-fluid">
     <section class="row d-flex flex-row justify-content-between bg-dark bg-gradient">
       <div class="col-8  py-2">IT'S ANOTHER ALL NIGHTER, AVOID RESPONSIBILITIES!</div>
       <p id="resourceCareer" class="col-4 text-center pt-2">Career total:</p>
+      <div id="score"></div>
+      <div id="progressBar"></div>
     </section>
+    <!-- <div class="progress" role="progressbar">
+      <div class="progress-bar bg-success" style="width: 66%"></div>
+    </div> -->
   </header>
 
   <!-- SECTION MAIN -->
@@ -95,6 +105,8 @@
       <audio controls loop class="col-1 hidden  music" src="Assets\BG-music.mp3"></audio>
     </section>
   </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
   <script src="app.js"></script>
 </body>
