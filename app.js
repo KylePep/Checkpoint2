@@ -4,6 +4,8 @@ let resourcePerInterval = 0;
 let resourceCareer = 0;
 let musicUnlock = false;
 let lights = false;
+let achievementCurrent = 0;
+let achievementTotal = 11;
 
 const up1 = document.getElementById('upgrade1')
 const up11 = document.getElementById('upgrade11')
@@ -20,6 +22,7 @@ console.log(document.getElementById('upgrade3'))
 console.log(document.getElementById('upgrade4'))
 
 let upgrades = [
+
   {
     name: 'upgrade1',
     cost: 50,
@@ -59,6 +62,78 @@ let upgrades = [
   }
 ]
 
+let achievements = [
+  {
+    name: '10 responsibilites avoided',
+    Type: 'resource',
+    arrayPosition: 0,
+    condition: 10,
+    locked: true,
+  }, {
+    name: 'Buy Book',
+    Type: 'mile stone',
+    arrayPosition: 0,
+    condition: 1,
+    locked: true,
+  }, {
+    name: 'Buy Game',
+    Type: 'mile stone',
+    arrayPosition: 1,
+    condition: 1,
+    locked: true,
+  }, {
+    name: 'Buy Snack',
+    Type: 'mile stone',
+    arrayPosition: 2,
+    condition: 1,
+    locked: true,
+  }, {
+    name: 'Buy Left Over',
+    Type: 'mile stone',
+    arrayPosition: 3,
+    condition: 1,
+    locked: true,
+  }, {
+    name: 'Buy 5 Books',
+    Type: 'mile stone',
+    arrayPosition: 0,
+    condition: 5,
+    locked: true,
+  }, {
+    name: 'Buy 3 Games',
+    Type: 'mile stone',
+    arrayPosition: 1,
+    condition: 3,
+    locked: true,
+  }, {
+    name: 'Buy 4 Snacks',
+    Type: 'mile stone',
+    arrayPosition: 2,
+    condition: 4,
+    locked: true,
+  }, {
+    name: 'Buy 2 Left Overs',
+    Type: 'mile stone',
+    arrayPosition: 3,
+    condition: 2,
+    locked: true,
+  }, {
+    name: '500 responsibilites avoided',
+    Type: 'resource',
+    arrayPosition: 0,
+    condition: 500,
+    locked: true,
+  }, {
+    name: '10,000 responsibilites avoided',
+    Type: 'resource',
+    arrayPosition: 0,
+    condition: 10000,
+    locked: true,
+  }
+]
+
+
+
 function resoureClick() {
   resource += resourcePerClick
   resourceCareer += resourcePerClick
@@ -76,6 +151,7 @@ function drawresource() {
   document.getElementById('resourceInterval').innerText = `${resourcePerInterval}`
   // @ts-ignore
   document.getElementById('resourceClick').innerText = `${resourcePerClick}`
+  document.getElementById('achievement').innerText = `Achievement: ${achievementCurrent}/${achievementTotal}`
 }
 function drawUpgrade() {
   // @ts-ignore
@@ -107,6 +183,7 @@ function buyUpgrade(targetUpgrade) {
     purchaseUpgrade.quantity++;
     purchaseUpgrade.value += (1 * purchaseUpgrade.mulitplier);
     statsUpdate()
+    checkUnlock()
   }
 
 
@@ -151,6 +228,28 @@ function checkUnlock() {
     document.getElementById('body').classList.replace('bg-hidden', 'bg')
     lights = true;
   }
+
+  let resourceAchievements = achievements.filter(achievement => achievement.Type == 'resource')
+  let mileStoneAchievement = achievements.filter(achievement => achievement.Type == 'mile stone')
+
+  resourceAchievements.forEach(achievement => {
+    if ((resource >= achievement.condition) && achievement.locked == true) {
+      window.alert(`Achievement: ${achievement.name}`)
+      achievement.locked = false
+      achievementCurrent++
+      console.log(achievement)
+    }
+  })
+
+  mileStoneAchievement.forEach(achievement => {
+    if ((upgrades[achievement.arrayPosition].quantity >= achievement.condition) && achievement.locked == true) {
+      window.alert(`Achievement: ${achievement.name}`)
+      achievement.locked = false
+      achievementCurrent++
+      console.log(achievement)
+    }
+  })
+
   upgrades.forEach(upgrade => {
     if (resource >= upgrade.cost) {
       upgrade.unlocked = true;
@@ -165,6 +264,7 @@ function checkUnlock() {
   if (upgrades[3].unlocked == true) {
     up4.querySelector('img').classList.replace('locked', 'unlocked')
   }
+  drawresource()
 }
 
 drawUpgrade()
